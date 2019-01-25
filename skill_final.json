@@ -1,0 +1,46 @@
+{
+  "manifest": {
+    "privacyAndCompliance":{
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://url/privacy.html",
+          "termsOfUseUrl": "https://url/termsofuse.html"
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Financial KPIs at a glance",
+          "examplePhrases": [
+            "Alexa, How is Sales doing",
+            "Alexa, How is my Net profit Margin",
+            "Alexa, What was the Net Profit Margin last year"
+          ],
+          "name": "Business Insights",
+          "description": "This skill provides answers to the most common financial KPIs within a business.",
+          "smallIconUri": "https://s3.amazonaws.com/secure.alexa.skill/small_s.png",
+          "largeIconUri": "https://s3.amazonaws.com/secure.alexa.skill/large_s.png"
+        }
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "How is Sales doing",
+      "category": "BUSINESS_AND_FINANCE",
+      "distributionMode": "PRIVATE",
+      "distributionCountries":["US"]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "LAMBDA_ARN"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}

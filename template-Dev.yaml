@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'Business Results'
+Resources:
+  DynamoDBTable:
+    Type: AWS::Serverless::SimpleTable    
+    Properties: 
+      TableName: UserAuth
+      PrimaryKey:
+        Name: id
+        Type: String
+      SSESpecification:
+        SSEEnabled: true
+  
+  SMSDynamoDBTable:
+    Type: AWS::Serverless::SimpleTable    
+    Properties: 
+      TableName: DeviceContactMapping
+      PrimaryKey:
+        Name: id
+        Type: String
+      SSESpecification:
+        SSEEnabled: true
+
+  BusinessResults:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: ./lambda/custom
+      Description: 'Business Results'
+      MemorySize: 256
+      Timeout: 120
+      Environment:
+        Variables:          
+          AWSREGION: us-east-1
+          PIN_TIMEOUT_IN_MINS: 5
+      Policies:       
+        - Version: "2012-10-17"
+          Statement:
+            -               
+              Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+                - s3:*
+                - dynamodb:*
+                - sns:*
+              Resource: "*" 
+      Events:
+        AlexaSkillEvent:
+          Type: AlexaSkill

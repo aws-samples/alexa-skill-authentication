@@ -1,0 +1,170 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "business insights",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SalesTrend",
+                    "slots": [
+                        {
+                            "name": "When",
+                            "type": "WhenType"
+                        },
+                        {
+                            "name": "Period",
+                            "type": "PeriodType"
+                        },
+                        {
+                            "name": "PIN",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "How was Sales {When} {Period}",
+                        "How is Sales doing",
+                        "How is the Sales growth"
+                    ]
+                },
+                {
+                    "name": "FinancialTrend",
+                    "slots": [
+                        {
+                            "name": "When",
+                            "type": "WhenType"
+                        },
+                        {
+                            "name": "Period",
+                            "type": "PeriodType"
+                        },
+                        {
+                            "name": "PIN",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "What was the Net Profit Margin {When} {Period}",
+                        "How is the Net profit Margin"
+                    ]
+                },
+                {
+                    "name": "SignOut",
+                    "slots": [],
+                    "samples": [
+                        "Log out",
+                        "Sign out",
+                        "Sign me off",
+                        "End Session"
+                    ]
+                },
+                {
+                    "name": "UnusedIntent",
+                    "slots": [
+                        {
+                            "name": "When",
+                            "type": "WhenType"
+                        }
+                    ],
+                    "samples": [
+                        "{When}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "WhenType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Last",
+                                "synonyms": [
+                                    "Previous"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "PeriodType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Year",
+                                "synonyms": [
+                                    "Year"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Month",
+                                "synonyms": [
+                                    "Month"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "UnusedIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "When",
+                            "type": "WhenType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.798851683430.824164465241"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.798851683430.824164465241",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "This Intent is only created to enable Dialog Model with a required Slot"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,4 @@
+#Ignore packaged YAML files as they are generated at run time
+packagedDev.yaml
+**/node_modules
+**config

@@ -1,0 +1,16 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Financial KPIs at a glance",
+          "name": "Business Insights"
+        }
+      }      
+    },
+    "apis": {
+      "custom": {}
+    },
+    "manifestVersion": "1.0"
+  }
+}
