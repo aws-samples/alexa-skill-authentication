@@ -54,7 +54,7 @@ This demo assumes you have your developer environment ready to go and that you h
 
 2. In the root directory `alexa-skill-authentication`, you should see a file named 'deploy-lambda.sh'. This will let you deploy the Skill's backend code as a Lambda function. Ensure you edit this file to replace the name of the S3 bucket as found in your AWS account.
 
-3. Deploy the lambda function by executing the `deploy-lambda.sh` file. Make note of the name of the Lambda function and its ARN. You will need it in the subsequent steps.
+3. Deploy the lambda function by executing the `deploy-lambda.sh` file (Change permissions of this file by executing the command `chmod +x deploy-lambda.sh` if need be.). Make note of the name of the Lambda function and its ARN. You will need it in subsequent steps.
 
 4. Configure the Alexa Skill Kit as a Trigger to the Lambda function by running this command.
 
@@ -97,7 +97,7 @@ This demo assumes you have your developer environment ready to go and that you h
     ```
     **Note**: Replace the value of SKILL_ID.
 
-    This submission process may take about 90 minutes to complete, and once completed the skill will be available in the live stage.
+    This submission process may take about 90 minutes to complete and once completed the skill will be available in the live stage.
 
 ### Distribute as Private Skill
 Ensure that the Skill's Status is `Live` before executing this step. The final step is to distribute the skill to an Alexa for Business organization.  To do this, you’ll need the ARN of the AWS account for the organization which you want to deploy the skill. Then enter the following command:
@@ -131,7 +131,7 @@ ask api add-private-distribution-account -s  amzn1.ask.skill.fede81a9-09a7-4b46-
 
 13. Invoke the Skill by saying "Alexa, Open Business Insights"
 14. Then ask "How is the Net profit Margin?".
-15. You should be receiving the 4 Digit PIN via SMS. Alexa will prompt you to Utter the 4 Digit PIN.
+15. The Alexa Skill will send a 4 Digit PIN via SMS. The Skill will prompt you to Utter the 4 Digit PIN.
 16. Provide a valid PIN and Alexa should now respond with the KPI Information.
 
 
