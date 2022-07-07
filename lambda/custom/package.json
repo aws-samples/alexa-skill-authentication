@@ -13,6 +13,6 @@
     "ask-sdk-core": "^2.0.7",
     "ask-sdk-model": "^1.4.1",
     "comma-number": "^2.0.0",
-    "moment": "^2.22.2"
+    "moment": "^2.29.4"
   }
 }
